@@ -1,10 +1,12 @@
+import toast from "react-hot-toast";
+
 const AddProduct = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const brand = form.brand.value;
-    const type = form.type.value;
+    const category = form.category.value;
     const price = form.price.value;
     const details = form.details.value;
     const rating = form.rating.value;
@@ -13,7 +15,7 @@ const AddProduct = () => {
     const newProduct = {
       name,
       brand,
-      type,
+      category,
       price,
       details,
       rating,
@@ -23,7 +25,30 @@ const AddProduct = () => {
     console.log(newProduct);
 
     // send data to the server
+
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if(data.insertedId){
+            toast("Product Added", {
+                icon: "✅",
+                style: {
+                  borderRadius: "10px",
+                  background: "#333",
+                  color: "#fff",
+                },
+              });
+        }
+    });
   };
+
   return (
     <div className="max-w-screen-xl mx-auto p-10">
       <h1 className="text-center text-4xl italic font-semibold mb-12">
@@ -49,25 +74,30 @@ const AddProduct = () => {
               <span className="label-text">Brand Name</span>
             </label>
             <label className="input-group">
-              <input
-                type="text"
-                name="brand"
-                placeholder="Brand Name"
-                className="input input-bordered w-full"
-              />
+              <select name="brand" className="select select-bordered w-full">
+                <option disabled selected>
+                  Select
+                </option>
+                <option value="apple">Apple</option>
+                <option value="samsung">Samsung</option>
+                <option value="pixel">Pixel</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="onePlus">OnePlus</option>
+                <option value="realme">Realme</option>
+              </select>
             </label>
           </div>
         </div>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Type</span>
+              <span className="label-text">Category</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
-                name="type"
-                placeholder="Type"
+                name="category"
+                placeholder="Category"
                 className="input input-bordered w-full"
               />
             </label>
