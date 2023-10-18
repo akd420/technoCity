@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Samsung Galaxy S22",
+        "details": "6.2-inch AMOLED display, Snapdragon 8 Gen 2 SoC, 128GB storage",
+        "price": 899.99,
+        "img": "/images/1-300x300.jpg"
+    },
+    {
+        "id": 2,
+        "name": "iPhone 13 Pro",
+        "details": "5G support, A15 Bionic chip, Pro camera system,128GB storage",
+        "price": 1099.99,
+        "img": "/images/2-300x300.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Google Pixel 6",
+        "details": "5.8-inch OLED display, Google Tensor SoC, 128GB storage",
+        "price": 799.00,
+        "img": "/images/3-300x300.jpg"
+    },
+    {
+        "id": 4,
+        "name": "OnePlus 9 Pro",
+        "details": "6.7-inch Fluid AMOLED display, Snapdragon 888 SoC, 256GB storage",
+        "price": 899.00,
+        "img": "/images/4-300x300.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Xiaomi Mi 11",
+        "details": "6.55-inch AMOLED display, Snapdragon 888 SoC, 128GB storage",
+        "price": 699.99,
+        "img": "/images/5-300x300.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Realme GT Master Edition",
+        "details": "6.4-inch Super AMOLED display, Snapdragon 778G SoC, 128GB storage",
+        "price": 349.00,
+        "img": "/images/6-300x300.jpg"
+    }
+]

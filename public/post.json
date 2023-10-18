@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "New iPhone 14 Pro Rumors Surface",
+    "date": "2023-10-15",
+    "short_description": "The latest leaks about the iPhone 14 Pro suggest significant camera upgrades and a faster processor.",
+    "img": "/images/blog-1-scaled.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Microsoft Unveils Surface Laptop 5",
+    "date": "2023-10-12",
+    "short_description": "Microsoft's new Surface Laptop 5 is expected to feature improved performance and a sleek design.",
+    "img": "/images/blog-2-scaled.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Samsung Galaxy S23 Release Date Confirmed",
+    "date": "2023-10-10",
+    "short_description": "Samsung has officially announced the release date for the Galaxy S23, and it's just around the corner.",
+    "img": "/images/blog-3-scaled.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Apple Unveils New Macbook Pro with M2 Chip",
+    "date": "2023-10-05",
+    "short_description": "Apple's latest MacBook Pro model boasts the powerful M2 chip for enhanced performance and battery life.",
+    "img": "/images/blog-4-scaled.jpeg"
+  }
+]
