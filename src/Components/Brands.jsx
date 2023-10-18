@@ -11,7 +11,7 @@ const Brands = ({brands}) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center mt-12">
                     {brands.map((brand) => (
                         <div key={brand.id}>
-                        <Link to={`/${brand.name}`}><div key={brand.id} className=" rounded-lg border border-base-200 bg-base-200 p-6">
+                        <Link to={`/brands/${brand.name}`}><div key={brand.id} className=" rounded-lg border border-base-200 bg-base-200 p-6">
                             <img src={brand.logo} alt={brand.name} className="h-20 w-52 mx-auto" />
                             <div className="p-6">
                                 <h2 className="text-xl font-semibold text-center">{brand.name}</h2>

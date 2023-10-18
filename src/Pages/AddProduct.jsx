@@ -66,6 +66,7 @@ const AddProduct = () => {
                 name="name"
                 placeholder="Product Name"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -74,9 +75,9 @@ const AddProduct = () => {
               <span className="label-text">Brand Name</span>
             </label>
             <label className="input-group">
-              <select name="brand" className="select select-bordered w-full">
-                <option disabled selected>
-                  Select
+              <select name="brand" className="select select-bordered w-full" defaultValue="" required>
+                <option disabled value="">
+                  Select . . . 
                 </option>
                 <option value="apple">Apple</option>
                 <option value="samsung">Samsung</option>
@@ -99,6 +100,7 @@ const AddProduct = () => {
                 name="category"
                 placeholder="Category"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -112,6 +114,7 @@ const AddProduct = () => {
                 name="price"
                 placeholder="Price"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -127,6 +130,7 @@ const AddProduct = () => {
                 name="details"
                 placeholder="Details"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -140,6 +144,7 @@ const AddProduct = () => {
                 name="rating"
                 placeholder="Rating (1 to 5)"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -155,6 +160,7 @@ const AddProduct = () => {
                 name="photo"
                 placeholder="Photo URL"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>

@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddProduct from "../Pages/AddProduct";
 import PrivateRoute from "./PrivateRoute";
+import BrandDetails from "../Components/BrandDetails";
 
 const Router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const Router = createBrowserRouter([
         element: <PrivateRoute>
           <AddProduct></AddProduct>
         </PrivateRoute>
+      },{
+        path: "/brands/:brand.name",
+        element: <BrandDetails></BrandDetails>,
+        loader: () => fetch("/brands.json"),
       }
     ],
   },
