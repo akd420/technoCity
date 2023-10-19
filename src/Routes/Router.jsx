@@ -17,26 +17,28 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("/brands.json"),
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/add",
-        element: <PrivateRoute>
-          <AddProduct></AddProduct>
-        </PrivateRoute>
-      },{
-        path: "/brands/:brand.name",
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/brands/:id",
         element: <BrandDetails></BrandDetails>,
-        loader: () => fetch("/brands.json"),
-      }
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+      },
     ],
   },
 ]);

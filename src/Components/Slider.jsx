@@ -42,10 +42,10 @@ const Slider = ({images}) => {
 
   return (
     <>
-      <div ref={sliderRef} className="keen-slider h-auto object-cover absolute opacity-75">
-        <div className="keen-slider__slide number-slide1"><img className="h-[300px] md:h-[500px] lg:h-[800px]" src={img1} alt="" /></div>
-        <div className="keen-slider__slide number-slide1"><img className="h-[300px] md:h-[500px] lg:h-[800px]" src={img2} alt="" /></div>
-        <div className="keen-slider__slide number-slide1"><img className="h-[300px] md:h-[500px] lg:h-[800px]" src={img3} alt="" /></div>
+      <div ref={sliderRef} className="keen-slider max-w-screen-xl mx-auto h-auto object-cover absolute opacity-75">
+        <div className="keen-slider__slide number-slide1 mx-auto"><img className="h-[300px] md:h-[500px] lg:h-[800px]" src={img1} alt="" /></div>
+        <div className="keen-slider__slide number-slide1 mx-auto"><img className="h-[300px] md:h-[500px] lg:h-[800px]" src={img2} alt="" /></div>
+        <div className="keen-slider__slide number-slide1 mx-auto"><img className="h-[300px] md:h-[500px] lg:h-[800px]" src={img3} alt="" /></div>
       </div>
     </>
   )

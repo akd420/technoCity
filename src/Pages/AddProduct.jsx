@@ -83,7 +83,7 @@ const AddProduct = () => {
                 <option value="samsung">Samsung</option>
                 <option value="pixel">Pixel</option>
                 <option value="xiaomi">Xiaomi</option>
-                <option value="onePlus">OnePlus</option>
+                <option value="oneplus">OnePlus</option>
                 <option value="realme">Realme</option>
               </select>
             </label>
@@ -136,16 +136,19 @@ const AddProduct = () => {
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
-              <span className="label-text">Rating (1 to 5)</span>
+              <span className="label-text">Rating</span>
             </label>
             <label className="input-group">
-              <input
-                type="text"
-                name="rating"
-                placeholder="Rating (1 to 5)"
-                className="input input-bordered w-full"
-                required
-              />
+            <select name="rating" className="select select-bordered w-full" defaultValue="" required>
+                <option disabled value="">
+                  Select . . . 
+                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
             </label>
           </div>
         </div>

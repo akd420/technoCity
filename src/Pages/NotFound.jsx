@@ -13,9 +13,9 @@ const NotFound = () => {
           </figure>
           <div className="card-body text-center lg:text-left">
             <h2 className=" text-rose text-8xl font-bold">Oops!</h2>
-            <p className="text-3xl font-semibold mt-5">That Links Is Broken.</p>
+            <p className="text-3xl font-semibold mt-5">This Link Is Broken.</p>
             <p>
-              Page does not exist or some other error occured. Go to our{" "}
+              Page does not exist or some other error occurred. Go to our{" "}
               <span className="text-rose">
                 <Link to={"/"}>Home page</Link>
               </span>

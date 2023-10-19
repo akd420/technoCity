@@ -111,45 +111,49 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <div className="flex items-center ">
-            <img className="md:w-12 w-10" src="/logo.png" alt="" />
-            <a className="btn btn-ghost normal-case text-lg md:text-2xl">
-              Techno <span className="text-rose">City</span>
-            </a>
-          </div>
+          <Link to={"/"}>
+            <div className="flex items-center ">
+              <img className="md:w-12 w-10" src="/logo.png" alt="" />
+              <p className="btn btn-ghost normal-case text-lg md:text-2xl">
+                Techno <span className="text-rose">City</span>
+              </p>
+            </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-        {user ? (
-          <div className="dropdown dropdown-bottom dropdown-end flex items-center">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                {
-                  user.photoURL ? <img src={user.photoURL} /> : <img src="/images/profile.svg" />
-                }
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box"
-            >
-              <li>
-              <p className="text-xl">{user?.displayName}</p>
-              </li>
-              <li>
-                <a className="text-xl" onClick={logOut}>Logout</a>
-              </li>
-            </ul>
-          </div>
-        ) : (
-          <Link to={"/login"}>
-            <button className="btn bg-rose text-white">
-              Login
-            </button>
-          </Link>
-        )}
+          {user ? (
+            <div className="dropdown dropdown-bottom dropdown-end flex items-center">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  {user.photoURL ? (
+                    <img src={user.photoURL} />
+                  ) : (
+                    <img src="/images/profile.svg" />
+                  )}
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box"
+              >
+                <li>
+                  <p className="text-xl">{user?.displayName}</p>
+                </li>
+                <li>
+                  <a className="text-xl" onClick={logOut}>
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn bg-rose text-white">Login</button>
+            </Link>
+          )}
           <div className="ml-2 flex items-center justify-center">
             <label className="swap swap-rotate">
               <input onClick={toggleTheme} type="checkbox" />
