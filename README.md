@@ -2,7 +2,7 @@
 
 Project Name: Techno City
 
-## [ Project Live Link](https://akd-esports-frenzy.web.app/)
+## [ Project Live Link](https://akd-techno-city.web.app/)
 
 ## 5 Project features
 
