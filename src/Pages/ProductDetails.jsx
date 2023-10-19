@@ -24,13 +24,16 @@ const ProductDetails = () => {
       rating,
       photo,
     };
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newItem),
-    })
+    fetch(
+      "https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newItem),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

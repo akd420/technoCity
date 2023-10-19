@@ -22,30 +22,32 @@ const AddProduct = () => {
       photo,
     };
 
-
     // send data to the server
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
+    fetch(
+      "https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        if(data.insertedId){
-            toast("Product Added", {
-                icon: "✅",
-                style: {
-                  borderRadius: "10px",
-                  background: "#333",
-                  color: "#fff",
-                },
-              });
+        console.log(data);
+        if (data.insertedId) {
+          toast("Product Added", {
+            icon: "✅",
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
         }
-    });
+      });
   };
 
   return (
@@ -74,9 +76,14 @@ const AddProduct = () => {
               <span className="label-text">Brand Name</span>
             </label>
             <label className="input-group">
-              <select name="brand" className="select select-bordered w-full" defaultValue="" required>
+              <select
+                name="brand"
+                className="select select-bordered w-full"
+                defaultValue=""
+                required
+              >
                 <option disabled value="">
-                  Select . . . 
+                  Select . . .
                 </option>
                 <option value="apple">Apple</option>
                 <option value="samsung">Samsung</option>
@@ -138,9 +145,14 @@ const AddProduct = () => {
               <span className="label-text">Rating</span>
             </label>
             <label className="input-group">
-            <select name="rating" className="select select-bordered w-full" defaultValue="" required>
+              <select
+                name="rating"
+                className="select select-bordered w-full"
+                defaultValue=""
+                required
+              >
                 <option disabled value="">
-                  Select . . . 
+                  Select . . .
                 </option>
                 <option value="1">1</option>
                 <option value="2">2</option>

@@ -41,7 +41,9 @@ const Router = createBrowserRouter([
         path: "/brands/:id",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/brands/:brand/:id",
@@ -51,7 +53,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/:brand/${params.id}/`),
+          fetch(
+            `https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/products/:brand/${params.id}/`
+          ),
       },
       {
         path: "/cart",
@@ -60,7 +64,10 @@ const Router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch(
+            "https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/cart"
+          ),
       },
       {
         path: "/product/:id",
@@ -70,7 +77,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/:brand/${params.id}/`),
+          fetch(
+            `https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/products/:brand/${params.id}/`
+          ),
       },
     ],
   },

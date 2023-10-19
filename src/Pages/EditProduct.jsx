@@ -23,25 +23,28 @@ const EditProduct = () => {
       rating,
       photo,
     };
-    fetch(`http://localhost:5000/products/:brand/${product._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/products/:brand/${product._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.modifiedCount > 0) {
-            toast("Product Updated", {
-                icon: "✅",
-                style: {
-                  borderRadius: "10px",
-                  background: "#333",
-                  color: "#fff",
-                },
-              });
+        if (data.modifiedCount > 0) {
+          toast("Product Updated", {
+            icon: "✅",
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
         }
       });
   };

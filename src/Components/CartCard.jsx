@@ -15,34 +15,32 @@ const CartCard = ({ product }) => {
 
   const handleDelete = () => {
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#15803d',
-        cancelButtonColor: '#fb7185',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Deleted!',
-            'Your item has been deleted.',
-            'success'
-          )
-          fetch(`http://localhost:5000/cart/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
-      });
-        }
-      })
-    
-  }
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#15803d",
+      cancelButtonColor: "#fb7185",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+        fetch(
+          `https://techno-city-mpl1ken8j-ayan-kumars-projects.vercel.app/cart/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -65,7 +63,12 @@ const CartCard = ({ product }) => {
             itemStyles={myStyles}
           ></Rating>
           <div className="card-actions">
-            <button onClick={handleDelete} className="btn bg-rose text-white mt-2">Delete</button>
+            <button
+              onClick={handleDelete}
+              className="btn bg-rose text-white mt-2"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
