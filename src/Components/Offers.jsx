@@ -47,13 +47,13 @@ const Offers = () => {
             <span
               className="whitespace-nowrap bg-rose px-3 py-1.5 text-xs font-medium text-white"
             >
-              New
+              On Sale
             </span>
         
             <h3 className="mt-4 text-lg font-medium text-gray-900">{offer.name}</h3>
             <p>{offer.details}</p>
         
-            <p className="mt-1.5 text-sm text-gray-700">${offer.price}</p>
+            <p className="mt-1.5 text-sm text-gray-700"><s>${offer.price}</s> to ${offer.price-150}</p>
         
             <form className="mt-4">
               <button
