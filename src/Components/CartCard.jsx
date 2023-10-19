@@ -36,8 +36,7 @@ const CartCard = ({ product }) => {
       .then((data) => {
         console.log(data);
         setTimeout(() => {
-            // window.location.reload();
-            console.log("yo");
+            window.location.reload();
         }, 1000);
       });
         }
