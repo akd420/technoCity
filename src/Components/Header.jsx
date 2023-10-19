@@ -7,7 +7,7 @@ const Header = () => {
     img3: "/3.jpg",
   };
   return (
-    <div className="max-w-screen-xl mx-auto mt-10">
+    <div className="max-w-screen-xl mx-auto mt-10 px-2">
       <Slider images={images}></Slider>
     </div>
   );

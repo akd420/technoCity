@@ -2,11 +2,11 @@ const Rating = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-12">
       <section className="bg-base-200 p-5 m-3 rounded">
-      <h1 className="text-2xl md:text-5xl italic font-semibold">
+      <h1 className="text-2xl md:text-5xl italic font-semibold text-center lg:text-start">
           Rate your <span className="text-rose">Experience</span>
         </h1>
         <div className="flex flex-col lg:flex-row items-center gap-5 mt-5">
-          <div className="flex justify-evenly items-center w-96 lg:w-1/3 p-3 m-3 border border-base-200 rounded">
+          <div className="grid grid-cols-2 items-center gap-6 w-3/4 md:w-1/2 lg:w-1/3 p-3 m-3 border border-base-200 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -26,7 +26,7 @@ const Rating = () => {
               <h4 className="inline text-md">Very Satisfied</h4>
             </div>
           </div>
-          <div className="flex justify-evenly items-center w-96 lg:w-1/3 p-3 m-3 border border-base-200 rounded">
+          <div className="grid grid-cols-2 items-center gap-6 w-3/4 md:w-1/2 lg:w-1/3 p-3 m-3 border border-base-200 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -46,7 +46,7 @@ const Rating = () => {
               <h4 className="inline text-md">Neutral</h4>
             </div>
           </div>
-          <div className="flex justify-evenly items-center w-96 lg:w-1/3 p-3 m-3 border border-base-200 rounded">
+          <div className="grid grid-cols-2 items-center gap-6 w-3/4 md:w-1/2 lg:w-1/3 p-3 m-3 border border-base-200 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

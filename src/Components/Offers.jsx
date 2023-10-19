@@ -9,7 +9,7 @@ const Offers = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
   return (
-    <div className="max-w-screen-xl mx-auto mb-16">
+    <div className="max-w-screen-xl mx-auto mb-16 px-2">
       <h1 className="text-center text-4xl md:text-7xl italic font-semibold">
         Our Featured <span className="text-rose">Offers</span>
       </h1>

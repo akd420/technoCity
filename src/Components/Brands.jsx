@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Brands = ({brands}) => {
     return (
-        <div className="max-w-screen-xl mx-auto my-16">
+        <div className="max-w-screen-xl mx-auto my-16 px-2">
             <h1 className="text-center text-4xl md:text-7xl italic font-semibold">Check out our <span className="text-rose">Brands</span></h1>
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center mt-12">
