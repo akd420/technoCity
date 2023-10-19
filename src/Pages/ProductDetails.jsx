@@ -24,7 +24,6 @@ const ProductDetails = () => {
       rating,
       photo,
     };
-    console.log(newItem);
     fetch("http://localhost:5000/cart", {
       method: "POST",
       headers: {

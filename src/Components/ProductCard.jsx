@@ -12,7 +12,6 @@ const myStyles = {
 const ProductCard = ({ product }) => {
     const { _id,name, brand, price, rating, photo, category } = product;
     const rate = parseInt(rating);
-
     
   return (
     <div>
@@ -27,7 +26,7 @@ const ProductCard = ({ product }) => {
           <p>Price: ${price.toUpperCase()}</p>
           <Rating style={{ maxWidth: 150 }} value={rate} itemStyles={myStyles}></Rating>
           <div className="card-actions">
-            <button className="btn bg-rose text-white">Edit</button>
+            <Link to={`/product/${_id}`}><button className="btn bg-rose text-white">Edit</button></Link>
             <Link to={`/brands/${brand}/${_id}`}><button className="btn bg-rose text-white">Details</button></Link>
           </div>
         </div>

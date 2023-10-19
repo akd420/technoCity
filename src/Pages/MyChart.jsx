@@ -3,7 +3,6 @@ import CartCard from "../Components/CartCard";
 
 const MyCart = () => {
   const loadedCart = useLoaderData();
-  console.log(loadedCart);
   return(
     <div className="max-w-screen-xl mx-auto">
         {!loadedCart.length > 0 ? (

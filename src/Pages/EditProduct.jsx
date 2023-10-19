@@ -1,7 +1,9 @@
 import toast from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 
-const AddProduct = () => {
-  const handleAddProduct = (event) => {
+const EditProduct = () => {
+  const product = useLoaderData();
+  const handleUpdateProduct = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -12,7 +14,7 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const photo = form.photo.value;
 
-    const newProduct = {
+    const updatedProduct = {
       name,
       brand,
       category,
@@ -21,22 +23,18 @@ const AddProduct = () => {
       rating,
       photo,
     };
-
-
-    // send data to the server
-
-    fetch("http://localhost:5000/products", {
-      method: "POST",
+    fetch(`http://localhost:5000/products/:brand/${product._id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(updatedProduct),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        if(data.insertedId){
-            toast("Product Added", {
+        console.log(data);
+        if(data.modifiedCount > 0) {
+            toast("Product Updated", {
                 icon: "✅",
                 style: {
                   borderRadius: "10px",
@@ -45,15 +43,14 @@ const AddProduct = () => {
                 },
               });
         }
-    });
+      });
   };
-
   return (
     <div className="max-w-screen-xl mx-auto p-10">
       <h1 className="text-center text-4xl italic font-semibold mb-12">
-        Add <span className="text-rose">Product</span>
+        Update <span className="text-rose">Product</span>
       </h1>
-      <form onSubmit={handleAddProduct}>
+      <form onSubmit={handleUpdateProduct}>
         <div className="grid grid-cols-1 md:grid-cols-2 mb-8">
           <div className="form-control">
             <label className="label">
@@ -66,6 +63,7 @@ const AddProduct = () => {
                 placeholder="Product Name"
                 className="input input-bordered w-full"
                 required
+                defaultValue={product.name}
               />
             </label>
           </div>
@@ -74,9 +72,14 @@ const AddProduct = () => {
               <span className="label-text">Brand Name</span>
             </label>
             <label className="input-group">
-              <select name="brand" className="select select-bordered w-full" defaultValue="" required>
+              <select
+                name="brand"
+                className="select select-bordered w-full"
+                defaultValue={product.brand}
+                required
+              >
                 <option disabled value="">
-                  Select . . . 
+                  Select . . .
                 </option>
                 <option value="apple">Apple</option>
                 <option value="samsung">Samsung</option>
@@ -100,6 +103,7 @@ const AddProduct = () => {
                 placeholder="Category"
                 className="input input-bordered w-full"
                 required
+                defaultValue={product.category}
               />
             </label>
           </div>
@@ -114,6 +118,7 @@ const AddProduct = () => {
                 placeholder="Price"
                 className="input input-bordered w-full"
                 required
+                defaultValue={product.price}
               />
             </label>
           </div>
@@ -130,6 +135,7 @@ const AddProduct = () => {
                 placeholder="Details"
                 className="input input-bordered w-full"
                 required
+                defaultValue={product.details}
               />
             </label>
           </div>
@@ -138,9 +144,14 @@ const AddProduct = () => {
               <span className="label-text">Rating</span>
             </label>
             <label className="input-group">
-            <select name="rating" className="select select-bordered w-full" defaultValue="" required>
+              <select
+                name="rating"
+                className="select select-bordered w-full"
+                defaultValue={product.rating}
+                required
+              >
                 <option disabled value="">
-                  Select . . . 
+                  Select . . .
                 </option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -163,14 +174,17 @@ const AddProduct = () => {
                 placeholder="Photo URL"
                 className="input input-bordered w-full"
                 required
+                defaultValue={product.photo}
               />
             </label>
           </div>
         </div>
-        <button className="w-full bg-rose text-white btn">Add Product</button>
+        <button className="w-full bg-rose text-white btn">
+          Update Product
+        </button>
       </form>
     </div>
   );
 };
 
-export default AddProduct;
+export default EditProduct;

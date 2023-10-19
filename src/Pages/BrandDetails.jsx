@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import Slider from "./Slider";
-import ProductCard from "./ProductCard";
+import Slider from "../Components/Slider";
+import ProductCard from "../Components/ProductCard";
 
 const BrandDetails = () => {
   const loadedBrands = useLoaderData();
@@ -43,16 +43,13 @@ const BrandDetails = () => {
       ) : (
         <div>
           <h1 className="text-center text-4xl md:text-7xl italic font-semibold">
-        Available <span className="text-rose">Products</span>
-      </h1>
+            Available <span className="text-rose">Products</span>
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center px-4 my-12">
-          {loadedBrands.map((product) => (
-            <ProductCard
-            product={product}
-              key={product._id}
-            ></ProductCard>
-          ))}
-        </div>
+            {loadedBrands.map((product) => (
+              <ProductCard product={product} key={product._id}></ProductCard>
+            ))}
+          </div>
         </div>
       )}
     </div>

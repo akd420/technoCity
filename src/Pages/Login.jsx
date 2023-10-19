@@ -13,7 +13,6 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
     signInUser(email, password)
       .then(() => {
         navigate(location?.state ? location.state : "/");
@@ -62,8 +61,9 @@ const Login = () => {
       });
   };
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <div className="hero min-h-screen bg-base-200">
+    <div className="bg-base-200">
+      <div className="max-w-screen-xl mx-auto">
+      <div className="hero min-h-screen ">
         <div className="hero-content flex-col gap-10">
           <div className="text-center">
             <h1 className="text-5xl font-bold">
@@ -124,6 +124,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

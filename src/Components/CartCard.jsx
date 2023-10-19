@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 
 import { Rating, RoundedStar } from "@smastrom/react-rating";
-import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const myStyles = {
   itemShapes: RoundedStar,
   activeFillColor: "#F02757",
-  inactiveFillColor: "#fecdd3",
+  inactiveFillColor: "#fecdd5",
 };
 
 const CartCard = ({ product }) => {
@@ -14,24 +14,34 @@ const CartCard = ({ product }) => {
   const rate = parseInt(rating);
 
   const handleDelete = () => {
-    fetch(`http://localhost:5000/cart/${_id}`, {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#15803d',
+        cancelButtonColor: '#fb7185',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your item has been deleted.',
+            'success'
+          )
+          fetch(`http://localhost:5000/cart/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast("Product Deleted", {
-            icon: "✅",
-            style: {
-              borderRadius: "10px",
-              background: "#333",
-              color: "#fff",
-            },
-          });
         setTimeout(() => {
-          window.location.reload();
+            window.location.reload();
         }, 1000);
       });
+        }
+      })
+    
   }
 
   return (

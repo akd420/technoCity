@@ -18,18 +18,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [brands, setBrands] = useState([]);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("/brands2.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setBrands(data);
-        onAuthStateChanged(auth, (user) => {
-          setUser(user);
-          setLoading(false);
-        });
-      });
-  }, []);
+
 
   //google login
   const googleLogin = () => {
@@ -55,6 +44,42 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetch("/brands2.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setBrands(data);
+  //       onAuthStateChanged(auth, (user) => {
+  //         setUser(user);
+  //         setLoading(false);
+  //       });
+  //     });
+  // }, []);
+
+  useEffect(() => {
+    fetch("/brands2.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setBrands(data);
+      })
+      .catch((error) => {
+       
+        console.error("Error fetching brands data:", error);
+      })
+      .finally(() => {
+        setLoading(false); 
+      });
+  }, []);
+
+  useEffect(()=>{
+    setLoading(true);
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+  },[])
+
 
   const authenticate = {
     user,
@@ -64,22 +89,29 @@ const AuthProvider = ({ children }) => {
     signOutUser,
     loading,
     brands,
+    setLoading,
   };
   
-  if (loading) {
-    return (
-      <div className="w-screen h-screen flex items-center justify-center">
-        <span className="loading loading-spinner text-rose  loading-lg"></span>
-      </div>
-    );
-  }
-  else{
-    return (
-      <AuthContext.Provider value={authenticate}>
-        {children}
-      </AuthContext.Provider>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="w-screen h-screen flex items-center justify-center">
+  //       <span className="loading loading-spinner text-rose  loading-lg"></span>
+  //     </div>
+  //   );
+  // }
+  // else{
+  //   return (
+  //     <AuthContext.Provider value={authenticate}>
+  //       {children}
+  //     </AuthContext.Provider>
+  //   );
+  // }
+  return (
+        <AuthContext.Provider value={authenticate}>
+          {children}
+        </AuthContext.Provider>
+      );
+  
 };
 
 export default AuthProvider;

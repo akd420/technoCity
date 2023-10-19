@@ -15,7 +15,6 @@ const Register = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, photo, email, password);
 
     // validation
     if (password.length < 6) {
@@ -104,90 +103,85 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col gap-10">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold">
-              Be A{" "}
-              <span className="font-semibold text-rose">
-                Member
-              </span>
-            </h1>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleRegister} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-xl">Your Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your Name....."
-                  name="name"
-                  required
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-xl">Photo</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Photo Url....."
-                  name="photo"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-xl">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Email....."
-                  name="email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-xl">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="Password....."
-                  name="password"
-                  className="input input-bordered"
-                  required
-                />
-                <label className="label">
-                  <p className="label-text-alt mt-3 text-xl">
-                    Already have an account?{" "}
-                    <Link to={"/login"}>
-                      <span className="font-semibold text-rose">
-                        Sign in
-                      </span>
-                    </Link>
-                  </p>
-                </label>
-              </div>
-              <div className="form-control mt-6 space-y-5">
-                <button className="btn bg-rose text-white">
-                  Register
+    <div className="bg-base-200">
+      <div className="max-w-screen-xl mx-auto">
+        <div className="hero min-h-screen">
+          <div className="hero-content flex-col gap-10">
+            <div className="text-center">
+              <h1 className="text-5xl font-bold">
+                Be A <span className="font-semibold text-rose">Member</span>
+              </h1>
+            </div>
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <form onSubmit={handleRegister} className="card-body">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-xl">Your Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Your Name....."
+                    name="name"
+                    required
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-xl">Photo</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Photo Url....."
+                    name="photo"
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-xl">Email</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Email....."
+                    name="email"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-xl">Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Password....."
+                    name="password"
+                    className="input input-bordered"
+                    required
+                  />
+                  <label className="label">
+                    <p className="label-text-alt mt-3 text-xl">
+                      Already have an account?{" "}
+                      <Link to={"/login"}>
+                        <span className="font-semibold text-rose">Sign in</span>
+                      </Link>
+                    </p>
+                  </label>
+                </div>
+                <div className="form-control mt-6 space-y-5">
+                  <button className="btn bg-rose text-white">Register</button>
+                  <p className="text-center">Or</p>
+                </div>
+              </form>
+              <div className="flex items-center justify-center mb-5 px-8">
+                <button
+                  onClick={handleGoogleLogin}
+                  className="w-full btn bg-rose text-white"
+                >
+                  <BiLogoGoogle></BiLogoGoogle>Register with Google
                 </button>
-                <p className="text-center">Or</p>
               </div>
-            </form>
-            <div className="flex items-center justify-center mb-5 px-8">
-              <button
-                onClick={handleGoogleLogin}
-                className="w-full btn bg-rose text-white"
-              >
-                <BiLogoGoogle></BiLogoGoogle>Register with Google
-              </button>
             </div>
           </div>
         </div>
