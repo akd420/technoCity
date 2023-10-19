@@ -68,17 +68,13 @@ const AuthProvider = ({ children }) => {
         console.error("Error fetching brands data:", error);
       })
       .finally(() => {
-        setLoading(false); 
+        onAuthStateChanged(auth, (user) => {
+          setUser(user);
+          setLoading(false);
+        });
       });
   }, []);
 
-  useEffect(()=>{
-    setLoading(true);
-    onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
-    });
-  },[])
 
 
   const authenticate = {
