@@ -58,7 +58,7 @@ const ProductDetails = () => {
           </div>
           <div className="text-center lg:text-start">
             <h1 className="text-5xl font-bold my-7">{name}</h1>
-            <p className="font-semibold">{brand.toUpperCase()}</p>
+            <p className="font-semibold text-rose">{brand.toUpperCase()}</p>
             <p>Category: {category.toUpperCase()}</p>
             <p className="my-2">{details}</p>
             <div className="flex justify-center lg:justify-start mb-2">

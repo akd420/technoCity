@@ -128,7 +128,7 @@ const Navbar = () => {
             <div className="dropdown dropdown-bottom dropdown-end flex items-center">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  {user.photoURL ? (
+                  {user?.photoURL ? (
                     <img src={user.photoURL} />
                   ) : (
                     <img src="/images/profile.svg" />

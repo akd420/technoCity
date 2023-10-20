@@ -54,7 +54,7 @@ const CartCard = ({ product }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
-          <p className="font-semibold">{brand.toUpperCase()}</p>
+          <p className="font-semibold text-rose">{brand.toUpperCase()}</p>
           <p>Category: {category.toUpperCase()}</p>
           <p>Price: ${price.toUpperCase()}</p>
           <Rating
