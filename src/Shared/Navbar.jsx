@@ -115,7 +115,7 @@ const Navbar = () => {
             <div className="flex items-center ">
               <img className="md:w-12 w-10" src="/logo.png" alt="" />
               <p className="btn btn-ghost normal-case text-lg md:text-2xl">
-                Techno <span className="text-rose">City</span>
+                Techno<span className="text-rose">City</span>
               </p>
             </div>
           </Link>
@@ -126,6 +126,9 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <div className="dropdown dropdown-bottom dropdown-end flex items-center">
+              <div className="md:visible invisible">
+                <p className="text-xl md:mr-5">{user?.displayName}</p>
+              </div>
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   {user?.photoURL ? (
@@ -140,7 +143,7 @@ const Navbar = () => {
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box"
               >
                 <li>
-                  <p className="text-xl">{user?.displayName}</p>
+                  <p className="text-xl md:hidden">{user?.displayName}</p>
                 </li>
                 <li>
                   <a className="text-xl" onClick={logOut}>
